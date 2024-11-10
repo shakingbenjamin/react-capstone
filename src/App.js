@@ -3,7 +3,7 @@ import {Routes, Route} from "react-router-dom";
 import Navigation from "./routes/navigation/navigation.component";
 import SignIn from "./routes/sign-in/sign-in.component";
 
-
+// https://learn.microsoft.com/en-us/azure/active-directory-b2c/enable-authentication-react-spa-app
 const Shop = () => {
     return <h1>I am the shop page</h1>;
 };
