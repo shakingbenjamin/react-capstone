@@ -1,5 +1,11 @@
 ﻿import { initializeApp  } from 'firebase/app';
-import { GoogleAuthProvider, getAuth, signInWithRedirect, signInWithPopup, createUserWithEmailAndPassword } from 'firebase/auth';
+import { 
+    GoogleAuthProvider, 
+    getAuth,
+    signInWithPopup, 
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut} from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore'
 
 // capstone-web-app <-> captone-db Firebase configuration
@@ -26,7 +32,6 @@ googleAuthProvider.setCustomParameters({
 
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleAuthProvider);
-export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleAuthProvider);
 
 export const db = getFirestore();
 export const createUserDocFromAuth = async (userAuth, additionalInformation = {}) => {
@@ -56,8 +61,18 @@ export const createUserDocFromAuth = async (userAuth, additionalInformation = {}
     return userDocRef;
 }
 
+// interface layer functions
+
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
     if(!email || !password) return;
     
     return await createUserWithEmailAndPassword(auth, email, password)
 }
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+    if(!email || !password) return;
+    
+    return await signInWithEmailAndPassword(auth, email, password)
+}
+
+export const signOutAuthUser = async () => signOut(auth);
