@@ -10,12 +10,12 @@ import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore'
 
 // capstone-web-app <-> captone-db Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA3k8q6zRW4CmhvkjKr_yESXycihG-y7j4",
-    authDomain: "capstone-db-f0033.firebaseapp.com",
-    projectId: "capstone-db-f0033",
-    storageBucket: "capstone-db-f0033.appspot.com",
-    messagingSenderId: "458230665308",
-    appId: "1:458230665308:web:324637021bc0f891201699"
+    apiKey: "your-api-key",
+    authDomain: "auth-domain",
+    projectId: "project-id",
+    storageBucket: "storage-bucket",
+    messagingSenderId: "message-sender-id",
+    appId: "app-id"
 };
 
 
